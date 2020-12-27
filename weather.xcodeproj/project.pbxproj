@@ -14,6 +14,7 @@
 		ABF888F92598EC8C00A29574 /* weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABF888F72598EC8C00A29574 /* weather.xcdatamodeld */; };
 		ABF888FB2598EC8F00A29574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF888FA2598EC8F00A29574 /* Assets.xcassets */; };
 		ABF888FE2598EC8F00A29574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF888FC2598EC8F00A29574 /* LaunchScreen.storyboard */; };
+		ABF889072598ECD600A29574 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF889062598ECD600A29574 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ABF888FA2598EC8F00A29574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABF888FD2598EC8F00A29574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABF888FF2598EC8F00A29574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABF889062598ECD600A29574 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				ABF888F02598EC8C00A29574 /* SceneDelegate.swift */,
 				ABF888F22598EC8C00A29574 /* ViewController.swift */,
 				ABF888F42598EC8C00A29574 /* Main.storyboard */,
+				ABF889062598ECD600A29574 /* LoginViewController.swift */,
 				ABF888FA2598EC8F00A29574 /* Assets.xcassets */,
 				ABF888FC2598EC8F00A29574 /* LaunchScreen.storyboard */,
 				ABF888FF2598EC8F00A29574 /* Info.plist */,
@@ -143,6 +146,7 @@
 				ABF888F92598EC8C00A29574 /* weather.xcdatamodeld in Sources */,
 				ABF888F32598EC8C00A29574 /* ViewController.swift in Sources */,
 				ABF888EF2598EC8C00A29574 /* AppDelegate.swift in Sources */,
+				ABF889072598ECD600A29574 /* LoginViewController.swift in Sources */,
 				ABF888F12598EC8C00A29574 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

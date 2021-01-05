@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWb-Hu-OFK" customClass="GradientView" customModule="weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuS-g1-Rch">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -91,12 +95,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IWb-Hu-OFK" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="0Ks-Ts-GEf"/>
                             <constraint firstItem="pkO-Eq-60l" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="32U-A9-CV4"/>
+                            <constraint firstItem="YuS-g1-Rch" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6sD-AZ-eTc"/>
                             <constraint firstItem="YuS-g1-Rch" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9a8-rB-Lf8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IWb-Hu-OFK" secondAttribute="bottom" id="DN7-Id-zFE"/>
+                            <constraint firstItem="IWb-Hu-OFK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ES5-Cj-J06"/>
                             <constraint firstItem="YuS-g1-Rch" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gey-JC-pcy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YuS-g1-Rch" secondAttribute="trailing" id="Pic-Yd-5Mw"/>
+                            <constraint firstItem="IWb-Hu-OFK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tcv-aa-67M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YuS-g1-Rch" secondAttribute="bottom" id="aox-wR-Kh5"/>
                             <constraint firstItem="xiX-MN-A9f" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="fNO-xs-W4P"/>
+                            <constraint firstItem="IWb-Hu-OFK" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="rb4-fL-281"/>
+                            <constraint firstItem="IWb-Hu-OFK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xeh-Gg-c1C"/>
                         </constraints>
                     </view>
                     <connections>
@@ -105,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="66"/>
+            <point key="canvasLocation" x="166.66666666666669" y="65.625"/>
         </scene>
         <!--My Cities-->
         <scene sceneID="Y0u-LO-3wL">

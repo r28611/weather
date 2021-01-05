@@ -11,11 +11,22 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        sutupAppearance()
+        
         return true
+    }
+    
+    func sutupAppearance() {
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.barTintColor = UIColor.red
+        navigationBarAppearance.tintColor = .white
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let labelAppearance = UILabel.appearance(whenContainedInInstancesOf: [WeatherCollectionViewController.self])
+        labelAppearance.font = .italicSystemFont(ofSize: 16)
+        labelAppearance.textColor = .red
     }
 
     // MARK: UISceneSession Lifecycle

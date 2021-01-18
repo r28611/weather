@@ -10,10 +10,12 @@ import UIKit
 class CitiesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityImage: RoundedView!
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
-//        // Initialization code
+//        
+//        contentView.frame = bounds
 //    }
 //
 //    override func setSelected(_ selected: Bool, animated: Bool) {

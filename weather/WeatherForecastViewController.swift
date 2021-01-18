@@ -8,6 +8,8 @@
 import UIKit
 
 class WeatherForecastViewController: UIViewController {
+    
+    var city: City?
 
     @IBOutlet weak var dayPicker: DayPicker!
     @IBOutlet weak var dayLabel: UILabel!
@@ -17,8 +19,11 @@ class WeatherForecastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let city = self.city {
+            weatherImage.image = city.image
+        }
+        
     }
     
 
@@ -36,7 +41,7 @@ class WeatherForecastViewController: UIViewController {
     }
     
     @IBAction func weekDayPickerChanged(_ sender: DayPicker) {
-        dayLabel.text = sender.selectedDay?.title
+        dayLabel.text = "\(sender.selectedDay!.title), здесь будет число"
     }
     
 }

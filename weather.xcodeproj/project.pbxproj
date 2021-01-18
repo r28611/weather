@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB6E425325B1E5D000E7FB2D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E425225B1E5D000E7FB2D /* Design.swift */; };
+		AB6E483625B23E8200F7B66B /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E483525B23E8200F7B66B /* City.swift */; };
+		AB6E483D25B4E3F600F7B66B /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6E483C25B4E3F600F7B66B /* CityCell.xib */; };
+		AB6E484025B4E62400F7B66B /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E483F25B4E62400F7B66B /* CityCell.swift */; };
 		AB9DBEE825A47A88002B9B8A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9DBEE725A47A88002B9B8A /* GradientView.swift */; };
 		AB9DBEEC25A495A0002B9B8A /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9DBEEB25A495A0002B9B8A /* Day.swift */; };
 		AB9DBEF025A4995A002B9B8A /* DayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9DBEEF25A4995A002B9B8A /* DayPicker.swift */; };
@@ -21,13 +25,15 @@
 		ABF889072598ECD600A29574 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF889062598ECD600A29574 /* LoginViewController.swift */; };
 		ABF8890F25991D2100A29574 /* MyCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8890E25991D2100A29574 /* MyCitiesTableViewController.swift */; };
 		ABF88912259920AD00A29574 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF88911259920AD00A29574 /* CitiesTableViewController.swift */; };
-		ABF8892025992A9200A29574 /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8891F25992A9200A29574 /* CitiesTableViewCell.swift */; };
-		ABF88925259B8D4700A29574 /* MyCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF88924259B8D4700A29574 /* MyCitiesTableViewCell.swift */; };
 		ABF88928259DEBB200A29574 /* WeatherCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF88927259DEBB200A29574 /* WeatherCollectionViewController.swift */; };
 		ABF8892C259DF14100A29574 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8892B259DF14100A29574 /* WeatherCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB6E425225B1E5D000E7FB2D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		AB6E483525B23E8200F7B66B /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		AB6E483C25B4E3F600F7B66B /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		AB6E483F25B4E62400F7B66B /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		AB9DBEE725A47A88002B9B8A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		AB9DBEEB25A495A0002B9B8A /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		AB9DBEEF25A4995A002B9B8A /* DayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPicker.swift; sourceTree = "<group>"; };
@@ -44,8 +50,6 @@
 		ABF889062598ECD600A29574 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABF8890E25991D2100A29574 /* MyCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCitiesTableViewController.swift; sourceTree = "<group>"; };
 		ABF88911259920AD00A29574 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
-		ABF8891F25992A9200A29574 /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
-		ABF88924259B8D4700A29574 /* MyCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		ABF88927259DEBB200A29574 /* WeatherCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewController.swift; sourceTree = "<group>"; };
 		ABF8892B259DF14100A29574 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB6E483425B23E6D00F7B66B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB6E483525B23E8200F7B66B /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AB9DBEEA25A49581002B9B8A /* DayPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 		ABF888ED2598EC8C00A29574 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				AB6E483425B23E6D00F7B66B /* Model */,
 				AB9DBEEA25A49581002B9B8A /* DayPicker */,
 				ABF8891E25992A5400A29574 /* Cells */,
 				ABF888EE2598EC8C00A29574 /* AppDelegate.swift */,
@@ -96,6 +109,7 @@
 				ABF888F22598EC8C00A29574 /* ViewController.swift */,
 				ABF88927259DEBB200A29574 /* WeatherCollectionViewController.swift */,
 				ABF888F42598EC8C00A29574 /* Main.storyboard */,
+				AB6E425225B1E5D000E7FB2D /* Design.swift */,
 				AB9DBEF725A5FE21002B9B8A /* WeatherForecastViewController.swift */,
 				AB9DBEE725A47A88002B9B8A /* GradientView.swift */,
 				ABF88911259920AD00A29574 /* CitiesTableViewController.swift */,
@@ -112,9 +126,9 @@
 		ABF8891E25992A5400A29574 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				ABF8891F25992A9200A29574 /* CitiesTableViewCell.swift */,
-				ABF88924259B8D4700A29574 /* MyCitiesTableViewCell.swift */,
+				AB6E483F25B4E62400F7B66B /* CityCell.swift */,
 				ABF8892B259DF14100A29574 /* WeatherCollectionViewCell.swift */,
+				AB6E483C25B4E3F600F7B66B /* CityCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -176,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6E483D25B4E3F600F7B66B /* CityCell.xib in Resources */,
 				ABF888FE2598EC8F00A29574 /* LaunchScreen.storyboard in Resources */,
 				ABF888FB2598EC8F00A29574 /* Assets.xcassets in Resources */,
 				ABF888F62598EC8C00A29574 /* Main.storyboard in Resources */,
@@ -190,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABF888F92598EC8C00A29574 /* weather.xcdatamodeld in Sources */,
+				AB6E425325B1E5D000E7FB2D /* Design.swift in Sources */,
 				ABF888F32598EC8C00A29574 /* ViewController.swift in Sources */,
 				AB9DBEE825A47A88002B9B8A /* GradientView.swift in Sources */,
 				ABF8892C259DF14100A29574 /* WeatherCollectionViewCell.swift in Sources */,
@@ -197,10 +213,10 @@
 				ABF8890F25991D2100A29574 /* MyCitiesTableViewController.swift in Sources */,
 				ABF88928259DEBB200A29574 /* WeatherCollectionViewController.swift in Sources */,
 				ABF888EF2598EC8C00A29574 /* AppDelegate.swift in Sources */,
+				AB6E483625B23E8200F7B66B /* City.swift in Sources */,
 				AB9DBEF825A5FE21002B9B8A /* WeatherForecastViewController.swift in Sources */,
 				AB9DBEEC25A495A0002B9B8A /* Day.swift in Sources */,
-				ABF88925259B8D4700A29574 /* MyCitiesTableViewCell.swift in Sources */,
-				ABF8892025992A9200A29574 /* CitiesTableViewCell.swift in Sources */,
+				AB6E484025B4E62400F7B66B /* CityCell.swift in Sources */,
 				ABF88912259920AD00A29574 /* CitiesTableViewController.swift in Sources */,
 				ABF889072598ECD600A29574 /* LoginViewController.swift in Sources */,
 				ABF888F12598EC8C00A29574 /* SceneDelegate.swift in Sources */,

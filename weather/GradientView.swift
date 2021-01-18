@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class GradientView: UIView {
 
     let gradientLayer = CAGradientLayer()
@@ -25,11 +26,42 @@ class GradientView: UIView {
         }
     }
     
+    enum Diraction {
+        case horizontal
+        case vertical
+        case diagonal
+    }
+    
+    var direction: Diraction = .horizontal {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    var gradientStart = CGPoint(x: 0, y: 0) {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    var gradientEnd = CGPoint(x: 1, y: 0) {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
     
         gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.startPoint = gradientStart
+        switch direction {
+        case .horizontal:
+            gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        case .vertical:
+            gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        case .diagonal:
+            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        }
         gradientLayer.frame = bounds
         layer.insertSublayer(gradientLayer, at: 0)
         

@@ -10,9 +10,20 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animateTitlesAppearing()
+        animateTitleAppearing()
+        animateFieldsAppearing()
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
@@ -37,14 +48,66 @@ class LoginViewController: UIViewController {
         scrollView.contentInset = insets
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: Animation
+
+extension LoginViewController {
+    
+    func animateTitlesAppearing() {
+        let offset = view.bounds.width
+        emailLabel.transform = CGAffineTransform(translationX: -offset, y: 0)
+        passwordLabel.transform = CGAffineTransform(translationX: offset, y: 0)
+        
+        UIView.animate(withDuration: 1,
+                       delay: 1,
+                       options: .curveEaseOut,
+                       animations: {
+                           self.emailLabel.transform = .identity
+                           self.passwordLabel.transform = .identity
+                       },
+                       completion: nil)
     }
-    */
-
+    
+    func animateTitleAppearing() {
+        self.titleLabel.transform = CGAffineTransform(translationX: 0,
+                                                     y: -self.view.bounds.height/2)
+        
+        UIView.animate(withDuration: 1,
+                       delay: 1,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                           self.titleLabel.transform = .identity
+                       },
+                       completion: nil)
+    }
+    
+    func animateFieldsAppearing() {
+        let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeInAnimation.fromValue = 0
+        fadeInAnimation.toValue = 1
+        fadeInAnimation.duration = 1
+        fadeInAnimation.beginTime = CACurrentMediaTime() + 1
+        fadeInAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        fadeInAnimation.fillMode = CAMediaTimingFillMode.backwards
+        
+        self.emailTextField.layer.add(fadeInAnimation, forKey: nil)
+        self.passwordTextField.layer.add(fadeInAnimation, forKey: nil)
+    }
+    
+    func animateAuthButton() {
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.stiffness = 200
+        animation.mass = 2
+        animation.duration = 2
+        animation.beginTime = CACurrentMediaTime() + 1
+        animation.fillMode = CAMediaTimingFillMode.backwards
+        
+        self.loginButton.layer.add(animation, forKey: nil)
+    }
+    
 }

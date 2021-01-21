@@ -109,7 +109,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="qOr-fR-N5X" id="x3A-bs-f8v"/>
+                        <outlet property="emailTextField" destination="xiX-MN-A9f" id="B8A-cV-fYC"/>
+                        <outlet property="loginButton" destination="nep-iv-czz" id="BgD-Eo-YRo"/>
+                        <outlet property="passwordLabel" destination="1Wr-iz-hxG" id="dBd-Gl-XH2"/>
+                        <outlet property="passwordTextField" destination="Gdm-Sl-Arl" id="XDz-Rh-lOY"/>
                         <outlet property="scrollView" destination="YuS-g1-Rch" id="hHP-ss-i4c"/>
+                        <outlet property="titleLabel" destination="upi-qC-o3T" id="3nx-aq-LI8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -223,6 +229,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gue-Xq-MIL" secondAttribute="trailing" id="49A-K5-lVz"/>
+                            <constraint firstItem="rtJ-xe-VAc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h0D-Ht-qUK" secondAttribute="leading" constant="358" id="F4a-is-hEU"/>
                             <constraint firstItem="ZWZ-1R-Vaa" firstAttribute="centerX" secondItem="CWB-mX-0dO" secondAttribute="centerX" id="Hhg-bM-lke"/>
                             <constraint firstItem="rtJ-xe-VAc" firstAttribute="bottom" secondItem="h0D-Ht-qUK" secondAttribute="bottom" constant="-20" id="HsA-7a-U2P"/>
                             <constraint firstItem="1IV-LF-fOH" firstAttribute="leading" secondItem="h0D-Ht-qUK" secondAttribute="leading" id="OIh-Vq-S7r"/>
@@ -336,7 +343,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="separatorColor" systemColor="systemRedColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="136" id="efo-kq-54d" customClass="CityCell" customModule="weather" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="136" id="efo-kq-54d" customClass="CityCell" customModule="weather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="136"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="efo-kq-54d" id="ZGP-Lr-8M9">

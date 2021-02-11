@@ -41,6 +41,7 @@ class DayPicker: UIControl {
             buttons.append(button)
         }
         stackView = UIStackView(arrangedSubviews: buttons)
+        stackView.frame = bounds
         addSubview(stackView)
         
         stackView.axis = .horizontal

@@ -33,7 +33,6 @@ class MyCitiesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityCell {
-            cell.gradient.direction = .vertical
             cell.cityNameLabel.text = cities[indexPath.row].name
             cell.cityImage.image = cities[indexPath.row].image
             
@@ -56,7 +55,7 @@ class MyCitiesTableViewController: UITableViewController {
     }
     
     
-    // - MARK: Navigation
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "to_weekForecast" {

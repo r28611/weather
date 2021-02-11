@@ -170,10 +170,12 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtJ-xe-VAc">
                                 <rect key="frame" x="358" y="812" width="36" height="30"/>
-                                <state key="normal" title="More"/>
+                                <state key="normal" title="More">
+                                    <color key="titleColor" red="0.96346765759999997" green="0.64727139469999995" blue="0.52576851840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="detailButton:" destination="0vf-7B-uD9" eventType="touchUpInside" id="9EN-hb-CLr"/>
-                                    <segue destination="C1d-fB-7XU" kind="presentation" identifier="to_monthForecast" id="kO8-EI-NFx"/>
+                                    <segue destination="C1d-fB-7XU" kind="show" identifier="to_monthForecast" id="kO8-EI-NFx"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gue-Xq-MIL" customClass="DayPicker" customModule="weather" customModuleProvider="target">
@@ -229,7 +231,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gue-Xq-MIL" secondAttribute="trailing" id="49A-K5-lVz"/>
-                            <constraint firstItem="rtJ-xe-VAc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h0D-Ht-qUK" secondAttribute="leading" constant="358" id="F4a-is-hEU"/>
+                            <constraint firstItem="rtJ-xe-VAc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h0D-Ht-qUK" secondAttribute="leading" constant="8" id="F4a-is-hEU"/>
                             <constraint firstItem="ZWZ-1R-Vaa" firstAttribute="centerX" secondItem="CWB-mX-0dO" secondAttribute="centerX" id="Hhg-bM-lke"/>
                             <constraint firstItem="rtJ-xe-VAc" firstAttribute="bottom" secondItem="h0D-Ht-qUK" secondAttribute="bottom" constant="-20" id="HsA-7a-U2P"/>
                             <constraint firstItem="1IV-LF-fOH" firstAttribute="leading" secondItem="h0D-Ht-qUK" secondAttribute="leading" id="OIh-Vq-S7r"/>
@@ -257,15 +259,10 @@
             <objects>
                 <collectionViewController id="C1d-fB-7XU" customClass="WeatherCollectionViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Lqy-78-0w1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SMX-8Y-CBe">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="V9M-xi-Rc6" customClass="WeatherCollectionViewLayout" customModule="weather" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="VNb-zT-l4z" customClass="WeatherCollectionViewCell" customModule="weather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>

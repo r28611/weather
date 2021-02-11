@@ -16,13 +16,19 @@ class WeatherForecastViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     
+    let weatherService = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let city = self.city {
             weatherImage.image = city.image
+            weatherService.loadWeatherData(city: city.name)
+            
         }
+        
+        
+        
         
     }
     

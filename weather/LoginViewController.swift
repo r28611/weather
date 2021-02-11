@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keybordWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keybordWillhide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     @objc func hideKeyboard() {

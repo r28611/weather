@@ -9,19 +9,16 @@ import UIKit
 
 class CityCell: UITableViewCell {
     
-    
-    @IBOutlet weak var gradient: GradientView!
-    
     @IBOutlet weak var cityImage: RoundedView! {
         didSet {
-            self.cityImage.layer.borderColor = UIColor.white.cgColor
+            self.cityImage.layer.borderColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
             self.cityImage.layer.borderWidth = 2
         }
     }
     
     @IBOutlet weak var cityNameLabel: UILabel! {
         didSet {
-            self.cityNameLabel.textColor = UIColor.white
+            self.cityNameLabel.textColor = UIColor.red
         }
     }
     

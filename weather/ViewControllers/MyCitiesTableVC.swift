@@ -59,7 +59,7 @@ class MyCitiesTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "to_weekForecast" {
-            if let destination = segue.destination as? WeatherForecastViewController {
+            if let destination = segue.destination as? WeekForecastViewController {
                 destination.city = selectedCity
             }
         }
@@ -67,7 +67,7 @@ class MyCitiesTableViewController: UITableViewController {
     
     
     @IBAction func unwindFromTableViewController (_ segue: UIStoryboardSegue) {
-        guard let tableViewController = segue.source as? CitiesTableViewController,
+        guard let tableViewController = segue.source as? AllCitiesTableViewController,
               let indexPath = tableViewController.tableView.indexPathForSelectedRow else {return}
         
         let city = tableViewController.cities[indexPath.row]

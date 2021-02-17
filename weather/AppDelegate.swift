@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buttonAppearance.tintColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         buttonAppearance.titleColor(for: .normal)
         
-        let labelAppearance = UILabel.appearance(whenContainedInInstancesOf: [WeatherCollectionViewController.self])
+        let labelAppearance = UILabel.appearance(whenContainedInInstancesOf: [MonthForecastCollectionViewController.self])
         labelAppearance.font = .italicSystemFont(ofSize: 16)
         labelAppearance.textColor = .red
     }

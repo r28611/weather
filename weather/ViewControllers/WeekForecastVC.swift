@@ -1,5 +1,5 @@
 //
-//  WeatherForecastViewController.swift
+//  WeekForecastViewController.swift
 //  weather
 //
 //  Created by Margarita Novokhatskaia on 06.01.2021.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class WeatherForecastViewController: UIViewController {
+class WeekForecastViewController: UIViewController {
     
     var city: City?
+    
 
     @IBOutlet weak var dayPicker: DayPicker!
     @IBOutlet weak var dayLabel: UILabel!
@@ -23,25 +24,18 @@ class WeatherForecastViewController: UIViewController {
         
         if let city = self.city {
             weatherImage.image = city.image
-            weatherService.loadWeatherData(city: city.name)
+//            weatherService.loadWeatherData(city: city.name)
             
         }
         
-        
-        
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? MonthForecastCollectionViewController {
+            destination.city = self.city
+        }
     }
-    */
+
 
     @IBAction func detailButton(_ sender: UIButton) {
     }

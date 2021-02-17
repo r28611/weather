@@ -1,5 +1,5 @@
 //
-//  CitiesTableViewController.swift
+//  AllCitiesTableViewController.swift
 //  weather
 //
 //  Created by Margarita Novokhatskaia on 27.12.2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CitiesTableViewController: UITableViewController {
+class AllCitiesTableViewController: UITableViewController {
     
     var cities = [City]()
     

@@ -1,5 +1,5 @@
 //
-//  WeatherCollectionViewController.swift
+//  MonthForecastCollectionViewController.swift
 //  weather
 //
 //  Created by Margarita Novokhatskaia on 31.12.2020.
@@ -7,30 +7,47 @@
 
 import UIKit
 
-class WeatherCollectionViewController: UICollectionViewController {
+class MonthForecastCollectionViewController: UICollectionViewController {
+    
+    let weatherService = WeatherService()
+    var city: City?
+    var weathers = [Weather]()
+    let dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
+        
+        if let city = city {
+            weatherService.loadWeatherData(city: city.name) { [weak self] weathers in
+                // сохраняем полученные данные в массиве, чтобы коллекция могла получить к ним доступ
+                    self?.weathers = weathers
+                // коллекция должна прочитать новые данные
+                    self?.collectionView?.reloadData()
+                }
+
+        }
+        
         super.viewDidLoad()
 
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return weathers.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? WeatherCollectionViewCell {
-            cell.dayLabel.text = "\(indexPath.row + 1)"
-            cell.temperatureLabel.text = "\(Int.random(in: -5..<10))"
-            switch cell.temperatureLabel.text {
-            case "-5", "-4", "-3" :
-                cell.weatherImage.image = UIImage(systemName: "snow")
-            case "0" :
-                cell.weatherImage.image = UIImage(systemName: "cloud")
-            default:
-                cell.weatherImage.image = UIImage(systemName: "sun.min")
-            }
             
+            let weather = weathers[indexPath.row]
+            cell.temperatureLabel.text = "\(weather.temp) C"
+            
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            let date = Date(timeIntervalSince1970: weather.date)
+            cell.dayLabel.text = dateFormatter.string(from: date)
+            
+            let imageId = weather.weatherIcon
+            // потом сделать нормальный запрос
+            cell.weatherImage.load(url: URL(string: "http://openweathermap.org/img/wn/\(imageId)@2x.png")!)
+           
             return cell
         }
         return UICollectionViewCell()
@@ -38,14 +55,7 @@ class WeatherCollectionViewController: UICollectionViewController {
 
 }
 
-//extension WeatherCollectionViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: (view.frame.size.width / 3) - 1,
-//                      height: (view.frame.size.width / 3) - 1 )
-//    }
-//    
-//}
-
+// MARK: Custom Layout
 class WeatherCollectionViewLayout: UICollectionViewLayout {
 
     var cacheAttributes = [IndexPath: UICollectionViewLayoutAttributes]()

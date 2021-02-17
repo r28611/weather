@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="2181.1594202898555" y="66.294642857142861"/>
         </scene>
-        <!--Weather Forecast View Controller-->
+        <!--Week Forecast View Controller-->
         <scene sceneID="O5h-Do-2ml">
             <objects>
-                <viewController id="0vf-7B-uD9" customClass="WeatherForecastViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0vf-7B-uD9" customClass="WeekForecastViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CWB-mX-0dO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,10 +254,10 @@
             </objects>
             <point key="canvasLocation" x="2179.7101449275365" y="782.8125"/>
         </scene>
-        <!--Weather Collection View Controller-->
+        <!--Month Forecast Collection View Controller-->
         <scene sceneID="dTe-te-S4D">
             <objects>
-                <collectionViewController id="C1d-fB-7XU" customClass="WeatherCollectionViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="C1d-fB-7XU" customClass="MonthForecastCollectionViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Lqy-78-0w1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,7 +333,7 @@
         <!--Cities-->
         <scene sceneID="eHV-vO-qwd">
             <objects>
-                <tableViewController title="Cities" id="F3K-jA-hKa" customClass="CitiesTableViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Cities" id="F3K-jA-hKa" customClass="AllCitiesTableViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RxZ-3g-vLz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,7 +11,6 @@ class WeekForecastViewController: UIViewController {
     
     var city: City?
     
-
     @IBOutlet weak var dayPicker: DayPicker!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -24,7 +23,7 @@ class WeekForecastViewController: UIViewController {
         
         if let city = self.city {
             weatherImage.image = city.image
-//            weatherService.loadWeatherData(city: city.name)
+            self.title = city.name
             
         }
         

@@ -11,13 +11,13 @@ class MonthForecastCollectionViewController: UICollectionViewController {
     
     let weatherService = WeatherService()
     var city: City?
-    var weathers = [Weather]()
+    var weathers = [WeatherList]()
     let dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         
         if let city = city {
-            weatherService.loadWeatherForecast(city: city.name) { [weak self] weathers in
+            weatherService.loadWeatherForecast(city: city.name, for: .max) { [weak self] weathers in
                     self?.weathers = weathers
                     self?.collectionView?.reloadData()
                 }
@@ -35,17 +35,14 @@ class MonthForecastCollectionViewController: UICollectionViewController {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? WeatherCollectionViewCell {
             
             let weather = weathers[indexPath.row]
-            cell.temperatureLabel.text = "\(weather.temp) C"
+            cell.temperatureLabel.text = "\(Int(weather.temp.day)) °C"
             
             dateFormatter.dateFormat = "dd.MM.yyyy"
-            if let weatherDate = weather.date {
-                let date = Date(timeIntervalSince1970: weatherDate)
-                cell.dayLabel.text = dateFormatter.string(from: date)
-            }
+            let date = Date(timeIntervalSince1970: weather.dt)
+            cell.dayLabel.text = dateFormatter.string(from: date)
             
-            let imageId = weather.weatherIcon
             // потом сделать нормальный запрос
-            cell.weatherImage.load(url: URL(string: "http://openweathermap.org/img/wn/\(imageId)@2x.png")!)
+            cell.weatherImage.load(url: URL(string: "http://openweathermap.org/img/wn/\(weather.weather[0].icon)@2x.png")!)
            
             return cell
         }

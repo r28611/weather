@@ -20,7 +20,7 @@ class CityCell: UITableViewCell {
         self.cityNameLabel.text = city.name
         self.cityImage.image = city.image
         if let currentWeather = city.currentWeather {
-            self.tempLabel.text = "\(Int(currentWeather.temp)) °C"
+            self.tempLabel.text = "\(Int(currentWeather.main.temp)) °C"
         }
     }
     

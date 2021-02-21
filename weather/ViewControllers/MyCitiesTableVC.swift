@@ -8,34 +8,44 @@
 import UIKit
 
 class MyCitiesTableViewController: UITableViewController {
-
-    var cities = [City]()
+    
+    var myCities = [City]()
     var cityNames = [String]()
     var selectedCity: City?
-
+    let weatherService = WeatherService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         tableView.register(UINib(nibName: "CityCell", bundle: nil),
                            forCellReuseIdentifier: "CityCell")
-
-
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        for (index, cityName) in cityNames.enumerated() {
+            weatherService.currentWeather(city: cityName) { [weak self] weather in
+                self?.myCities[index].currentWeather = weather
+                self?.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cities.count
+        return myCities.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityCell {
-            cell.cityNameLabel.text = cities[indexPath.row].name
-            cell.cityImage.image = cities[indexPath.row].image
+            let city = self.myCities[indexPath.row]
             
+            cell.configure(city: city)
             return cell
         }
         return CityCell()
@@ -43,13 +53,13 @@ class MyCitiesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            cities.remove(at: indexPath.row)
+            myCities.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCity = cities[indexPath.row]
+        selectedCity = myCities[indexPath.row]
         
         performSegue(withIdentifier: "to_weekForecast", sender: self)
     }
@@ -76,8 +86,8 @@ class MyCitiesTableViewController: UITableViewController {
         if cityNames.contains(city.name) { return }
         
         cityNames.append(city.name)
-        cities.append(city)
+        myCities.append(city)
         tableView.reloadData()
     }
-
+    
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 class Weather: Decodable {
-    var date = 0.0
+    var date: Double? = nil
     var temp = 0.0
     var pressure = 0.0
     var humidity = 0

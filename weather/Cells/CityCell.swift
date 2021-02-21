@@ -9,22 +9,19 @@ import UIKit
 
 class CityCell: UITableViewCell {
     
-    @IBOutlet weak var cityImage: RoundedView! {
-        didSet {
-            self.cityImage.layer.borderColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
-            self.cityImage.layer.borderWidth = 2
-        }
-    }
+    @IBOutlet weak var cityImage: RoundedView!
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     
-    @IBOutlet weak var cityNameLabel: UILabel! {
-        didSet {
-            self.cityNameLabel.textColor = UIColor.red
+    func configure(city: City) {
+        self.cityImage.layer.borderColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        self.cityImage.layer.borderWidth = 2
+        
+        self.cityNameLabel.text = city.name
+        self.cityImage.image = city.image
+        if let currentWeather = city.currentWeather {
+            self.tempLabel.text = "\(Int(currentWeather.temp)) °C"
         }
-    }
-    
-    func configure(city: String, image: UIImage) {
-        self.cityNameLabel.text = city
-        self.cityImage.image = image
     }
     
     override func prepareForReuse() {

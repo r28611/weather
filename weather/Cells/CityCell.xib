@@ -15,23 +15,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-rF-vpc" customClass="RoundedView" customModule="weather" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <rect key="frame" x="16" y="8" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="P6h-v3-yCo"/>
                             <constraint firstAttribute="width" constant="50" id="pmI-rG-CT0"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAJ-ax-Z1A">
-                        <rect key="frame" x="74" y="22.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="82" y="18.5" width="57" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRT-aV-Vit">
+                        <rect key="frame" x="379.5" y="23.5" width="18.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="c0A-rF-vpc" firstAttribute="top" secondItem="9bO-vi-OE3" secondAttribute="top" constant="8" id="1GR-Se-Om0"/>
-                    <constraint firstItem="c0A-rF-vpc" firstAttribute="leading" secondItem="9bO-vi-OE3" secondAttribute="leading" constant="8" id="3Us-vb-kvS"/>
+                    <constraint firstItem="c0A-rF-vpc" firstAttribute="leading" secondItem="9bO-vi-OE3" secondAttribute="leading" constant="16" id="3Us-vb-kvS"/>
+                    <constraint firstAttribute="trailing" secondItem="gRT-aV-Vit" secondAttribute="trailing" constant="16" id="8Uv-Co-S8N"/>
                     <constraint firstAttribute="bottom" secondItem="c0A-rF-vpc" secondAttribute="bottom" constant="8" id="Rc8-y5-EtV"/>
+                    <constraint firstItem="gRT-aV-Vit" firstAttribute="centerY" secondItem="SAJ-ax-Z1A" secondAttribute="centerY" id="TNa-gL-Ly0"/>
                     <constraint firstItem="SAJ-ax-Z1A" firstAttribute="leading" secondItem="c0A-rF-vpc" secondAttribute="trailing" constant="16" id="ld5-o1-piD"/>
                     <constraint firstItem="SAJ-ax-Z1A" firstAttribute="centerY" secondItem="c0A-rF-vpc" secondAttribute="centerY" id="ote-Td-UYv"/>
                 </constraints>
@@ -52,6 +60,7 @@
             <connections>
                 <outlet property="cityImage" destination="c0A-rF-vpc" id="mcN-JZ-zKd"/>
                 <outlet property="cityNameLabel" destination="SAJ-ax-Z1A" id="eHE-dc-1Qi"/>
+                <outlet property="tempLabel" destination="gRT-aV-Vit" id="G3Q-J4-kie"/>
             </connections>
             <point key="canvasLocation" x="-102.89855072463769" y="-54.910714285714285"/>
         </tableViewCell>

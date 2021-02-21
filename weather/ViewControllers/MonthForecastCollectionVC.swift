@@ -17,13 +17,10 @@ class MonthForecastCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         
         if let city = city {
-            weatherService.loadWeatherData(city: city.name) { [weak self] weathers in
-                // сохраняем полученные данные в массиве, чтобы коллекция могла получить к ним доступ
+            weatherService.loadWeatherForecast(city: city.name) { [weak self] weathers in
                     self?.weathers = weathers
-                // коллекция должна прочитать новые данные
                     self?.collectionView?.reloadData()
                 }
-
         }
         
         super.viewDidLoad()
@@ -41,8 +38,10 @@ class MonthForecastCollectionViewController: UICollectionViewController {
             cell.temperatureLabel.text = "\(weather.temp) C"
             
             dateFormatter.dateFormat = "dd.MM.yyyy"
-            let date = Date(timeIntervalSince1970: weather.date)
-            cell.dayLabel.text = dateFormatter.string(from: date)
+            if let weatherDate = weather.date {
+                let date = Date(timeIntervalSince1970: weatherDate)
+                cell.dayLabel.text = dateFormatter.string(from: date)
+            }
             
             let imageId = weather.weatherIcon
             // потом сделать нормальный запрос

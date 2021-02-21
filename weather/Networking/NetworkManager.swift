@@ -14,11 +14,4 @@ class NetworkManager {
     private init() {
         
     }
-    
-    func loginWithSerwer(email: String, password: String) {
-        print("loginWithSerwer...")
-    }
-    func getDataFromUrl(url: String) {
-        print("getDataFromUrl...")
-    }
 }

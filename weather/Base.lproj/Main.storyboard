@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="-1832"/>
+            <point key="canvasLocation" x="1216" y="-656"/>
         </scene>
         <!--My Cities-->
         <scene sceneID="Y0u-LO-3wL">
@@ -366,6 +366,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qew-yQ-6V5" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nfn-WZ-Ihe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="diB-T9-X0R">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

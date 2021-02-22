@@ -10,21 +10,21 @@ import UIKit
 class AllCitiesTableViewController: UITableViewController {
     
     var cities = [
-        City(name: "Paris", image: UIImage(named: "Paris"), forecast: nil),
-        City(name: "Prague", image: UIImage(named: "Prague"), forecast: nil),
-        City(name: "Austin", image: UIImage(named: "Austin"), forecast: nil),
-        City(name: "Florencia", image: UIImage(named: "Florencia"), forecast: nil),
-        City(name: "New York", image: UIImage(named: "NewYork"), forecast: nil),
-        City(name: "London", image: UIImage(named: "London"), forecast: nil),
-        City(name: "Bangkok", image: UIImage(named: "Bangkok"), forecast: nil),
-        City(name: "Hong Kong", image: UIImage(named: "HongKong"), forecast: nil),
-        City(name: "Dubai", image: UIImage(named: "Dubai"), forecast: nil),
-        City(name: "Singapore", image: UIImage(named: "Singapore"), forecast: nil),
-        City(name: "Rome", image: UIImage(named: "Rome"), forecast: nil),
-        City(name: "Macau", image: UIImage(named: "Macau"), forecast: nil),
-        City(name: "Istanbul", image: UIImage(named: "Istanbul"), forecast: nil),
-        City(name: "Kuala Lumpur", image: UIImage(named: "KualaLumpur"), forecast: nil),
-        City(name: "Delhi", image: UIImage(named: "Delhi"), forecast: nil)
+        City(name: "Paris", image: "Paris", forecast: nil),
+        City(name: "Prague", image: "Prague", forecast: nil),
+        City(name: "Austin", image: "Austin", forecast: nil),
+        City(name: "Florencia", image: "Florencia", forecast: nil),
+        City(name: "New York", image: "NewYork", forecast: nil),
+        City(name: "London", image: "London", forecast: nil),
+        City(name: "Bangkok", image: "Bangkok", forecast: nil),
+        City(name: "Hong Kong", image: "HongKong", forecast: nil),
+        City(name: "Dubai", image: "Dubai", forecast: nil),
+        City(name: "Singapore", image: "Singapore", forecast: nil),
+        City(name: "Rome", image: "Rome", forecast: nil),
+        City(name: "Macau", image: "Macau", forecast: nil),
+        City(name: "Istanbul", image: "Istanbul", forecast: nil),
+        City(name: "Kuala Lumpur", image: "KualaLumpur", forecast: nil),
+        City(name: "Delhi", image: "Delhi", forecast: nil)
     ]
     
     override func viewDidLoad() {

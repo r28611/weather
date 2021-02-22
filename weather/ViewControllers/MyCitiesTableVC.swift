@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MyCitiesTableViewController: UITableViewController {
     
@@ -14,10 +15,21 @@ class MyCitiesTableViewController: UITableViewController {
     var selectedCity: City?
     let weatherService = WeatherService()
     
+    private lazy var appDelegare: AppDelegate? = {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        return appDelegate
+    }()
+    
+    private lazy var context: NSManagedObjectContext? = {
+        let context = appDelegare?.persistentContainer.viewContext
+        return context
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getMyCities()
         tableView.register(UINib(nibName: "CityCell", bundle: nil),
                            forCellReuseIdentifier: "CityCell")
     }
@@ -75,6 +87,18 @@ class MyCitiesTableViewController: UITableViewController {
         }
     }
     
+    func getMyCities() {
+        if let context = self.context {
+
+        let results = try! context.fetch(MyCity.fetchRequest()) as! [MyCity]
+            results.forEach { city in
+                self.myCities.append(City(name: city.name, image: city.image, currentWeather: nil, forecast: nil))
+                self.cityNames.append(city.name)
+            }
+        
+        }
+    }
+    
     
     @IBAction func unwindFromTableViewController (_ segue: UIStoryboardSegue) {
         guard let tableViewController = segue.source as? AllCitiesTableViewController,
@@ -88,6 +112,15 @@ class MyCitiesTableViewController: UITableViewController {
         cityNames.append(city.name)
         myCities.append(city)
         tableView.reloadData()
+        
+        if let context = self.context,
+           let application = self.appDelegare {
+            let newCity = MyCity(context: context)
+            newCity.name = city.name
+            newCity.image = city.image
+            application.saveContext()
+        }
+
     }
     
 }

@@ -18,7 +18,9 @@ class CityCell: UITableViewCell {
         self.cityImage.layer.borderWidth = 2
         
         self.cityNameLabel.text = city.name
-        self.cityImage.image = city.image
+        if let image = city.image {
+        self.cityImage.image = UIImage(named: image)
+        }
         if let currentWeather = city.currentWeather {
             self.tempLabel.text = "\(Int(currentWeather.main.temp)) °C"
         }

@@ -22,9 +22,10 @@ class WeekForecastViewController: UIViewController {
         super.viewDidLoad()
         
         if let city = self.city {
-            weatherImage.image = city.image
             self.title = city.name
-            
+        }
+        if let image = city?.image {
+            self.weatherImage.image = UIImage(named: image)
         }
         
     }

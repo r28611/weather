@@ -9,7 +9,7 @@ import UIKit
 
 struct City {
     let name: String
-    var image: UIImage!
+    var image: String?
     var currentWeather: CurrentWeather?
     var forecast: [Weather]?
 }
